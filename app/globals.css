@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brave Search Palette */
+  --color-brave-dark: #0f111a;
+  --color-brave-surface: #191b24;
+  --color-brave-accent: #ff5200;
+  --color-brave-muted: #9ca3af;
+  
+  /* Contemporary Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+}
+
+:root {
+  --background: var(--color-brave-dark);
+  --foreground: #f4f4f4;
+}
+
+/* Force dark mode colors globally */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom utility for the Blinkov grayscale hover effect */
+.project-image {
+  filter: grayscale(100%);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-image {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+}
